@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code4Newbiess</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, options);
+      });
+    </script>
+     
+</head>
+<body>
+  <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Cytaty</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#"><i class="material-icons">view_list</i></a></li>
+          <li><a href="<%= quotations_path %>"><i class="material-icons">perm_identity</i></a></li>
+          
+          
+        </ul>
+      </div>
+   
+  
+      <ul class="sidenav" id="mobile-demo">
+            <li><a href="#"><i class="material-icons">view_list</i></a></li>
+            <li><a href="<%= quotations_path %>"><i class="material-icons">perm_identity</i></a></li>
+            
+            
+      </ul>
+    </nav>
+  
+  
+  <div class="container">
+    <div class="row">
+      <%= yield %> 
+    </div>
+  </div>
+
+
+</body>
+</html>

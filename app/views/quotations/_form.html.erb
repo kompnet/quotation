@@ -1,0 +1,22 @@
+<%= form_for(@quotation) do |f| %>
+  <% if @quotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+
+      <ul>
+      <% @quotation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :author, :placeholder => 'Autor' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :citation, :placeholder => 'Cytat', :class => 'materialize-textarea' %>
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action"> Wyślij</button>
+  <a href="<%= quotations_path %>" class="btn waves-effect waves-light" name="action">Wstecz</a>
+<% end %>

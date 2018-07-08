@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Słynne cytaty</h1>
+
+<%= link_to new_quotation_path, :class => 'btn-floating btn-large waves-circle waves-effect waves-light red' do %>
+  <i class="material-icons">add</i>
+<% end %>
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Autor</th>
+      <th>Cytat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotations.each do |quotation| %>
+      <tr>
+        <td><%= quotation.author %></td>
+        <td><%= quotation.citation %></td>
+        <td><%= link_to 'Pokaż', quotation %></td>
+        <td><%= link_to 'Edytuj', edit_quotation_path(quotation) %></td>
+        <td><%= link_to 'Usuń', quotation, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten cytat?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
