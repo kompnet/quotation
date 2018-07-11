@@ -48,6 +48,6 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg', '~> 0.20'
+  # gem 'pg', '~> 0.20'
 end
 
